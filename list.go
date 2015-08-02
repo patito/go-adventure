@@ -25,6 +25,24 @@ func (l *LinkedList) Preppend(item int) {
     l.size++
 }
 
+func (l *LinkedList) Append(item int) {
+    node := new(Node)
+    node.item = item
+
+    if l.head == nil {
+        l.head = node
+    } else {
+        var previous *Node = nil;
+        for current := l.head; current != nil; {
+            previous = current
+            current = current.next
+        }
+        previous.next = node
+
+    }
+    l.size++
+}
+
 func (l *LinkedList) Size() int {
     return l.size
 }
@@ -36,29 +54,28 @@ func (l *LinkedList) Empty() bool {
 func (l *LinkedList) Print() {
     
     for current := l.head; current != nil; current = current.next {
-        fmt.Println(current.item)
+        fmt.Println("Item: ", current.item)
     }
 }
 
-func (l *LinkedList) Search(item int) *Node {
-    
+func (l *LinkedList) Search(item int) (*Node, int) {
+    pos := 0
     for current := l.head; current != nil; current = current.next {
         if current.item == item {
-            return current
+            return  current, pos
         }
+        pos += 1
     }
-    return nil
+    return nil, -1
 }
+
 
 func main() {
 
     l := new(LinkedList)
     l.Preppend(2)
-    l.Preppend(3)
-    l.Preppend(4)
     l.Preppend(5)
-    fmt.Println("Size list = ", l.Size())
-    fmt.Println("Empty = ", l.Empty())
-    fmt.Println("Node = ", l.Search(1))
+    l.Append(1)
+    l.Append(4)
     l.Print()
 }
