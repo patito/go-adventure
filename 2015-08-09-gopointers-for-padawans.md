@@ -203,7 +203,7 @@ package main
 import "fmt"
 
 // Using pointers
-func swap2(x, y *int) {
+func swap(x, y *int) {
     var z int
     z = *x
     *x = *y
@@ -215,7 +215,7 @@ func main() {
     y := 3
 
     // It will exchange the values
-    swap2(&x, &y)
+    swap(&x, &y)
     fmt.Println("X = ", x)
     fmt.Println("Y = ", y)
 }
