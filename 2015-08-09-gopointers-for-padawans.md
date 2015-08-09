@@ -244,6 +244,8 @@ This is the last part about pointers.
  - **Leonard**: Yeah, I love Go.
  - **Sheldon Cooper**: Let’s change Hailo night to Go night.
  - **Penny**: Or maybe we can just enjoy our life and go out talk to people.
+ - **Leonard**: Good idea Penny. Let's go out and talk to people about Go.
+ - **Penny**: Afff. :(
  - **Me**: Guys, more 10 minutes. Let’s talk about function new().
 
 **New()** is a buit-in function that receives a type as argument, allocate memory enough to that type and returns a pointer to the type. In the example bellow we have a *struct Person* with two differente attributes: name and age. We will use the function new to allocate memory to the type Person.
