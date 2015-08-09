@@ -51,7 +51,7 @@ func main() {
 
 ## Declaring pointers
 
-This is de moment we will become men and start working with pointers. Stop crying :D! Ok, let's declare some of them.
+This is the moment we will become men and start working with pointers. Stop crying :D! Ok, let's declare some of them.
 
 ```go
 package main
