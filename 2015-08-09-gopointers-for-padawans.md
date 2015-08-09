@@ -228,7 +228,7 @@ If I tell you the URL, I'm passing by reference. You can use that URL to see the
 If I print out the page and give you the printout, I'm passing by value. Your page is a disconnected copy of the original. You won't see any subsequent changes, and any changes that you make (e.g. scribbling on your printout) will not show up on the original page. If you destroy the printout, you have actually destroyed your copy of the object - but the original web page remains intact.”
 Ok, how is it going until now? Everybody happy? More questions?
 
- - **Charlie Harper: You are a nerd hobbit and I’m done with this bullshit.
+ - **Charlie Harper**: You are a nerd hobbit and I’m done with this bullshit.
  - **Me**: Where are you going?
  - **Charlie Harper**: Someplace where the bottles are full and the women are empty. Who comes? Penny? My treat.
  - **Howard Wolowitz**: I’m in.
