@@ -2,13 +2,13 @@
 
 Hi my friend, 
 
-like you I'm also trying to learn more about Go language. I've always wanted to know more about it, but as usual I always had an excuse on the tip of my tongue to postpone this  desire. Now I'm done. I found a good introduction book, An Introduction to Programming in Go, and I can read Effective Go online.
+like you I'm also trying to learn more about Go language. I've always wanted to know more about it, but as usual I always had an excuse on the tip of my tongue to postpone this  desire. Now I'm done. I found a good introduction book, *An Introduction to Programming in Go*, and I can read *Effective Go online*.
 
 I started reading about Go last week because a lot of friends are using it and they are encouraging me (pissing me off =) to do the same.
 
 I'm a complete newbie in this technology, so if you are an advanced jedi hacker this is not for you, go play RPG with your imaginary ORCs. However, if you are just a padawan like me, try to not sleep while reading it.
 
-If you see something wrong just leave me a comment, and I will fix it as soon as possible. Just to be clear "You suck Hobbit" is not a good comment.
+If you see something wrong just leave me a comment, and I will fix it as soon as possible. Just to be clear *"You suck Hobbit"* is not a good comment.
 
 ## Pointers: What are they?
 
@@ -23,7 +23,7 @@ If the concept of pointers is new to you, no worries, let's learn together. In a
  - **Jon Snow**: Not really!
  - **Me**: You know nothing, Jon Snow.
 
-Ok, when you declare a variable in your favorite language, in fact you are just saying to the Operating System: "Hey my dear OS, I have here this variable called *age* and I need a place, in the memory, to store it.". In other words, a memory address is an unique identifier that points to a place in the memory to be used to store your data. Look this simple example:
+Ok, when you declare a variable in your favorite language, in fact you are just saying to the Operating System: *"Hey my dear OS, I have here this variable called age and I need a place, in the memory, to store it."*. In other words, a memory address is an unique identifier that points to a place in the memory to be used to store your data. Look this simple example:
 
 ```go
 package main
@@ -126,7 +126,7 @@ func main() {
 
 Let's understand the code above. 
 
-As you know, all variables have a memory address. In the example the x address is ‘0x20818a220’ and the p address is ‘0x20818a228’. The variable x is an Integer and stores the value 10. The p variable is a pointer to integer and stores the value ‘0x20818a220’. When we do this instruction “*p = 5” we are using dereference to save the value 5 in place of 10.
+As you know, all variables have a memory address. In the example the x address is *0x20818a220* and the p address is *0x20818a228*. The variable x is an Integer and stores the value 10. The p variable is a pointer to integer and stores the value *0x20818a220*. When we do this instruction **"*p = 5”** we are using dereference to save the value 5 in place of 10.
 
 I don't know if I was clear enough. I hope so /o\. Let's do one more example, now using a struct.
 
@@ -246,7 +246,7 @@ This is the last part about pointers.
  - **Penny**: Or maybe we can just enjoy our life and go out talk to people.
  - **Me**: Guys, more 10 minutes. Let’s talk about function new().
 
-**New()** is a buit-in function that receives a type as argument, allocate memory enough to that type and returns a pointer to the type. In the example bellow we have a struct Person with two differente attributes: name and age. We will use the function new to allocate memory to the type Person.
+**New()** is a buit-in function that receives a type as argument, allocate memory enough to that type and returns a pointer to the type. In the example bellow we have a *struct Person* with two differente attributes: name and age. We will use the function new to allocate memory to the type Person.
 
 The amazing part is we don’t have to realease the memory because Go has a gargabe collector:
 
