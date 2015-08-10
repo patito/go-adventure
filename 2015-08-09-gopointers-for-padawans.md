@@ -156,7 +156,7 @@ func main() {
 
 We are using the package reflect just to verify the type of variable p.
 
- - **Athelstan**: Why when the print p in the first time its nil?
+ - **Athelstan**: Why when we print p in the first time its nil?
  - **Me**: I thought you were dead priest. Good question.
 
 If you declare variables and not initialize them, golang will do it for you. Your variable will be assigned with zero value for its type. For example if your variable is an integer it will be assigned with 0, for booleans false, floats 0.0, strings “” and pointers nil.
