@@ -114,7 +114,7 @@ func main() {
     fmt.Println(*p)  // Dereference. Will print 5
     fmt.Println(x)   // Printing x variable, value = 5
 }
-            Variables                    Memory Adrresses
+            Variables                    Memory Addresses
                       +--------------+
               +---> x |      10      |    0x20818a220
               |       +--------------+
