@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
 
 const (
     lcl = 122  // lowercase limit
@@ -39,16 +43,17 @@ func rot13(message string) string {
 }
 
 func main() {
-    message := "HELLO"
-    fmt.Println(message)
-    message = rot13(message)
-    fmt.Println(message)
 
-    message = "The Quick Brown Fox Jumps Over The Lazy Dog"
-    fmt.Println(message)
-    message = rot13(message)
-    fmt.Println(message)
-
+    for message := " "; message != "quit"; {
+        fmt.Print("> ")
+        reader := bufio.NewReader(os.Stdin)
+        message, _ := reader.ReadString('\n')
+        if message == "quit"  {
+            break
+        }
+        message = rot13(message)
+        fmt.Println(message)
+    }
 
 
 }
