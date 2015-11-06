@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 
-func Staircase (num int) {
+func Staircase (levels int) {
 
-    n := num
+    n := levels
     for n > 0 {
-        for i := 0; i < num; i++ {
+        for i := 0; i < levels; i++ {
             if i < n - 1 {
                 fmt.Print(" ")
             } else {
@@ -21,7 +21,7 @@ func Staircase (num int) {
 
 
 func main() {
-    var num int
-    fmt.Scanf("%d", &num)
-    Staircase(num)
+    var levels int
+    fmt.Scanf("%d", &levels)
+    Staircase(levels)
 }
