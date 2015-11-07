@@ -48,12 +48,10 @@ func main() {
         fmt.Print("> ")
         reader := bufio.NewReader(os.Stdin)
         message, _ := reader.ReadString('\n')
-        if message == "quit"  {
+        if message == "quit\n"  {
             break
         }
         message = rot13(message)
         fmt.Println(message)
     }
-
-
 }
