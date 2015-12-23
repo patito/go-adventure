@@ -1,38 +1,48 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+)
 
-type Node struct {
-    item int
-    next *Node
+type Element struct {
+    next *Element
+    value interface{}
 }
 
-type LinkedList struct {
-    head *Node
+type List struct {
     size int
+    head *Element
 }
 
-func (l *LinkedList) Preppend(item int) {
-    node := new(Node)
-    node.item = item
+// Create new list
+func New() *List {
+    return &List{0, nil}
+}
 
-    if l.head == nil {
-        l.head = node
-    } else {
-        node.next = l.head
-        l.head = node
-    }
+// Returns the size of list
+func (l *List) Length() int {
+    return l.size
+}
+
+// Insert the new element in the front of list
+func (l *List) Preppend(value interface{}) {
+    node := new(Element)
+    node.value = value
+
+    node.next = l.head
+    l.head = node
     l.size++
 }
 
-func (l *LinkedList) Append(item int) {
-    node := new(Node)
-    node.item = item
+// Insert the new element in the back of list
+func (l *List) Append(value interface{}) {
+    node := new(Element)
+    node.value = value
 
     if l.head == nil {
         l.head = node
     } else {
-        var previous *Node = nil;
+        var previous *Element = nil;
         for current := l.head; current != nil; {
             previous = current
             current = current.next
@@ -43,39 +53,83 @@ func (l *LinkedList) Append(item int) {
     l.size++
 }
 
-func (l *LinkedList) Size() int {
-    return l.size
+// Returns the first element of list
+func (l *List) First() *Element {
+    if l.Empty() {
+        return nil
+    }
+    return l.head
 }
 
-func (l *LinkedList) Empty() bool {
+// Returns the last element of list
+func (l *List) Last() *Element {
+    if l.Empty() {
+        return nil
+    }
+    return l.head
+}
+
+// Verify if the list is empty
+func (l *List) Empty() bool {
     return l.size == 0
 }
 
-func (l *LinkedList) Print() {
-    
+// Print the list
+func (l *List) Print() {
     for current := l.head; current != nil; current = current.next {
-        fmt.Println("Item: ", current.item)
+        fmt.Println("Item: ", current.value)
     }
 }
 
-func (l *LinkedList) Search(item int) (*Node, int) {
-    pos := 0
+// Search for elements
+func (l *List) Search(value interface{}) (*Element) {
     for current := l.head; current != nil; current = current.next {
-        if current.item == item {
-            return  current, pos
+        if current.value == value {
+            return  current
         }
-        pos += 1
     }
-    return nil, -1
+    return nil
+}
+
+// Remove an element
+func (l *List) Remove(value interface{}) *Element {
+    var p *Element = nil
+    current := l.head
+
+    if l.head.value == value {
+        l.head = current.next
+
+        return current
+    }
+
+    for current != nil {
+       if current.value == value {
+           p.next = current.next
+           current.next = nil
+
+           return current
+       }
+       p = current
+       current = current.next
+    }
+    return nil
 }
 
 
 func main() {
 
-    l := new(LinkedList)
-    l.Preppend(2)
-    l.Preppend(5)
-    l.Append(1)
-    l.Append(4)
+    l := New()
+
+    l.Append("titao1")
+    l.Append("grazzilinda")
+    l.Append("nani3")
+    l.Append("cadide4")
+
+
+    //fmt.Println(l.Search("cadide4").value)
+    l.Remove("titao1")
+    l.Remove("cadide4")
+    //fmt.Println(l.Search("cadide4").value)
     l.Print()
+
 }
