@@ -15,8 +15,10 @@ func main() {
 		ch <- word
 	}
 
-	for i := 0; i < len(words); i++ {
-		fmt.Println(<-ch + " ")
+	close(ch)
+
+	for msg := range ch {
+		fmt.Println(msg + " ")
 
 	}
 
