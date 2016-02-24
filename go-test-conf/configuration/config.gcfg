@@ -1,0 +1,10 @@
+;Main configuration file for the application
+[server]
+    protocol=tcp
+    port=:7000
+[logs]
+    accessLogsPath=log_test/api_notifications_access.log
+    errorLogsPath=log_test/api_notifications_error.log
+[database]
+    connectionString=postgres://localhost/notifications?sslmode=disable
+    maxIdleConnections=300
